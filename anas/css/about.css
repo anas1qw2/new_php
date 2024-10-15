@@ -1,0 +1,121 @@
+/* General Reset and Base Styles */
+body {
+    margin: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.1) 75%, rgba(255, 255, 255, 0.1)), #468DB4;
+    color: white;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    min-height: 100vh; /* Full viewport height */
+    display: flex; /* Flexbox for layout */
+    flex-direction: column; /* Align items in a column */
+}
+
+/* Navigation Styles */
+nav {
+    background: linear-gradient(135deg, #333, #444); /* Gradient background */
+    padding: 15px 20px; /* Spacing */
+    position: fixed; /* Fixed navigation */
+    width: 100%; /* Full width */
+    top: 0; /* Position at the top */
+    z-index: 100; /* Overlay above other content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+}
+
+nav ul {
+    list-style: none; /* Remove default list styling */
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+    display: flex; /* Flexbox for layout */
+    justify-content: space-around; /* Center and space items */
+    align-items: center; /* Align items vertically */
+}
+
+nav ul li a {
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.2em; /* Font size for links */
+    transition: color 0.3s, transform 0.2s; /* Smooth transition for effects */
+}
+
+nav ul li a:hover {
+    color: #FF7F0E; /* Change color on hover */
+    transform: scale(1.1); /* Slight scale effect */
+}
+
+nav ul li a.active {
+    font-weight: bold; /* Bold for active link */
+    border-bottom: 2px solid #FF7F0E; /* Underline for active link */
+}
+
+/* Main Content Styles */
+.container {
+    text-align: center; /* Center text */
+    padding: 100px 20px; /* Adjust padding for fixed nav */
+    flex: 1; /* Allow container to grow and take available space */
+}
+
+h1, h2 {
+    margin-bottom: 20px; /* Spacing below heading */
+    text-transform: uppercase; /* Uppercase for emphasis */
+}
+
+p {
+    font-size: 1.2em; /* Paragraph size */
+    margin-bottom: 40px; /* Spacing below paragraph */
+}
+
+/* About Image Styles */
+.about-image {
+    width: 100%; /* Full width */
+    max-width: 600px; /* Limit max width */
+    margin: 20px auto; /* Center the image */
+    display: block; /* Block-level element */
+}
+
+/* Meet the Team Section */
+.team {
+    display: grid; /* Grid layout */
+    grid-template-columns: repeat(1, 1fr); /* Single column by default */
+    gap: 40px; /* Space between team members */
+    margin-top: 40px; /* Space above the team section */
+}
+
+/* Responsive grid for larger screens */
+@media (min-width: 640px) {
+    .team {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on small screens */
+    }
+}
+
+@media (min-width: 768px) {
+    .team {
+        grid-template-columns: repeat(3, 1fr); /* Three columns on medium screens */
+    }
+}
+
+.team-member {
+    display: flex; /* Flexbox for layout */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items */
+    text-align: center; /* Center text */
+}
+
+.team-photo {
+    width: 150px; /* Set width for team photos */
+    height: 150px; /* Set height for uniformity */
+    border-radius: 50%; /* Circular images */
+    object-fit: cover; /* Cover the area */
+    margin-bottom: 15px; /* Space below the image */
+}
+
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column; /* Stack nav items vertically */
+    }
+
+    .container {
+        padding: 60px 20px; /* Less padding on small screens */
+    }
+}
